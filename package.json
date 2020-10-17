@@ -4,7 +4,9 @@
   "description": "Reveal.js formal presentation template",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "npx gulp",
+    "build": "npx gulp build"
   },
   "keywords": [
     "revealjs",
@@ -14,5 +16,26 @@
     "webpack"
   ],
   "author": "Double-oxygeN <mail@double-oxygen.net> (https://github.com/Double-oxygeN)",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "reveal.js": "^4.1.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "cssnano": "^4.1.10",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "highlight.js": "^10.2.1",
+    "livescript": "^1.6.0",
+    "postcss": "^8.1.1",
+    "postcss-import": "^12.0.1",
+    "sass": "^1.27.0",
+    "webpack-merge": "^5.2.0",
+    "webpack-stream": "^6.1.0"
+  }
 }

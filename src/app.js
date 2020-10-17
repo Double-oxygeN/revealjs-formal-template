@@ -1,0 +1,18 @@
+import Reveal from 'reveal.js'
+import Highlight from 'reveal.js/plugin/highlight/highlight.esm.js'
+import MathPlugin from 'reveal.js/plugin/math/math.esm.js'
+
+window.addEventListener('load', (ev) => {
+  new Reveal({
+    width: 1440,
+    height: 1080,
+    plugins: [ Highlight, MathPlugin ],
+    controls: false,
+    progress: false,
+    slideNumber: 'c/t',
+    center: true,
+    transition: 'none',
+    pdfMaxPagesPerSlide: 1,
+    pdfSeparateFragments: false
+  }).initialize()
+})

@@ -1,0 +1,18 @@
+include config.pug
+
+doctype html
+html(lang=locale)
+  head
+    meta(charset="UTF-8")
+    title= title
+
+    link(rel="stylesheet", href="../node_modules/reveal.js/dist/reset.css")
+    link(rel="stylesheet", href="../node_modules/reveal.js/dist/reveal.css")
+    link#theme(rel="stylesheet", href="../node_modules/reveal.js/dist/theme/simple.css")
+    link(rel="stylesheet", href="override.css")
+
+  body
+    .reveal
+      include slides.pug
+
+    script(src="app.js")
