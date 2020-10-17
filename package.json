@@ -1,0 +1,18 @@
+{
+  "name": "revealjs-formal-template",
+  "version": "1.0.0",
+  "description": "Reveal.js formal presentation template",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "revealjs",
+    "template",
+    "gulp",
+    "pug",
+    "webpack"
+  ],
+  "author": "Double-oxygeN <mail@double-oxygen.net> (https://github.com/Double-oxygeN)",
+  "license": "Apache-2.0"
+}
