@@ -2,6 +2,7 @@ require! {
   gulp: { series, parallel, src, dest, watch }
   del
   'webpack-stream': webpack
+  'gulp-image': image
   'gulp-pug': pug
   'gulp-htmlmin': htmlmin
   'gulp-sass': sass
@@ -16,13 +17,33 @@ bs = browser-sync.create!
 require! sass: dart-sass
 sass.compiler = dart-sass
 
+image-extensions = <[ png jpg jpeg gif svg ]>
+
+src-images = image-extensions
+  .map (ext) -> 'src/assets/**/*.' + ext
+
+src-assets = [ 'src/assets/**' ]
+  .concat src-images.map (glob) -> '!' + glob
+
 dist-files =
   * 'dist/*.html'
   * 'dist/*.js'
   * 'dist/*.css'
+  * 'dist/assets/*'
 
 clean = (done) !->
   del dist-files
+  done!
+
+copy-images = (done) !->
+  src src-images
+    .pipe image!
+    .pipe dest 'dist/assets'
+  done!
+
+copy-assets = (done) !->
+  src src-assets
+    .pipe dest 'dist/assets'
   done!
 
 build-webpack = (debug) -> (done) !->
@@ -88,9 +109,21 @@ watch-then-sync = (done) !->
 exports <<<
   default: series do
     clean
-    parallel build-webpack(on), build-pug, build-sass
-    parallel browser-sync-init, watch-then-sync
+    parallel do
+      build-webpack(on)
+      build-pug
+      build-sass
+      copy-images
+      copy-assets
+    parallel do
+      browser-sync-init
+      watch-then-sync
 
   build: series do
     clean
-    parallel build-webpack(off), build-pug, build-sass
+    parallel do
+      build-webpack(off)
+      build-pug
+      build-sass
+      copy-images
+      copy-assets

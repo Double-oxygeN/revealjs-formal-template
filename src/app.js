@@ -12,6 +12,7 @@ window.addEventListener('load', (ev) => {
     slideNumber: 'c/t',
     center: true,
     transition: 'none',
+    hideCursorTime: 3000,
     pdfMaxPagesPerSlide: 1,
     pdfSeparateFragments: false
   }).initialize()
