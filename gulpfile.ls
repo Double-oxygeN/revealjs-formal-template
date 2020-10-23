@@ -31,30 +31,26 @@ dist-files =
   * 'dist/*.css'
   * 'dist/assets/*'
 
-clean = (done) !->
+clean = (done) ->
   del dist-files
-  done!
 
-copy-images = (done) !->
+copy-images = (done) ->
   src src-images
     .pipe image!
     .pipe dest 'dist/assets'
-  done!
 
-copy-assets = (done) !->
+copy-assets = (done) ->
   src src-assets
     .pipe dest 'dist/assets'
-  done!
 
-build-webpack = (debug) -> (done) !->
-  src 'src/app.js'
+build-webpack = (debug) -> (done) ->
+  src 'src/app.ls'
     .pipe plumber!
     .pipe webpack do
       config: if debug then webpack-development-config else webpack-production-config
     .pipe dest 'dist'
-  done!
 
-build-pug = (done) !->
+build-pug = (done) ->
   src 'src/presentation.pug'
     .pipe plumber!
     .pipe pug!
@@ -66,9 +62,8 @@ build-pug = (done) !->
       remove-redundant-attributes: on
     .pipe dest 'dist'
     .pipe bs.stream!
-  done!
 
-build-sass = (done) !->
+build-sass = (done) ->
   src 'src/override.sass'
     .pipe plumber!
     .pipe sass do
@@ -80,9 +75,8 @@ build-sass = (done) !->
     .pipe postcss!
     .pipe dest 'dist'
     .pipe bs.stream!
-  done!
 
-browser-sync-init = (done) !->
+browser-sync-init = (done) ->
   bs.init do
     server:
       base-dir: \.
@@ -94,14 +88,11 @@ browser-sync-init = (done) !->
     reload-delay: 500
     reload-on-restart: on
 
-  done!
-
-browser-sync-reload = (done) !->
+browser-sync-reload = (done) ->
   bs.reload!
-  done!
 
 watch-then-sync = (done) !->
-  watch 'src/app.js', series build-webpack(on), browser-sync-reload
+  watch 'src/app.ls', series build-webpack(on), browser-sync-reload
   watch 'src/**/*.pug', series build-pug, browser-sync-reload
   watch 'src/**/*.sass', series build-sass, browser-sync-reload
   done!
@@ -127,3 +118,7 @@ exports <<<
       build-sass
       copy-images
       copy-assets
+
+  assets: parallel do
+    copy-images
+    copy-assets

@@ -33,6 +33,7 @@
     "gulp-sass": "^4.1.0",
     "highlight.js": "^10.2.1",
     "livescript": "^1.6.0",
+    "livescript-loader": "^0.1.6",
     "postcss": "^8.1.1",
     "postcss-import": "^12.0.1",
     "sass": "^1.27.0",
