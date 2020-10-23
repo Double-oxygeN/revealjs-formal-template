@@ -47,7 +47,7 @@ copy-assets = (done) !->
   done!
 
 build-webpack = (debug) -> (done) !->
-  src 'src/app.js'
+  src 'src/app.ls'
     .pipe plumber!
     .pipe webpack do
       config: if debug then webpack-development-config else webpack-production-config
@@ -101,7 +101,7 @@ browser-sync-reload = (done) !->
   done!
 
 watch-then-sync = (done) !->
-  watch 'src/app.js', series build-webpack(on), browser-sync-reload
+  watch 'src/app.ls', series build-webpack(on), browser-sync-reload
   watch 'src/**/*.pug', series build-pug, browser-sync-reload
   watch 'src/**/*.sass', series build-sass, browser-sync-reload
   done!
