@@ -88,8 +88,9 @@ browser-sync-init = (done) ->
     reload-delay: 500
     reload-on-restart: on
 
-browser-sync-reload = (done) ->
+browser-sync-reload = (done) !->
   bs.reload!
+  done!
 
 watch-then-sync = (done) !->
   watch 'src/app.ls', series build-webpack(on), browser-sync-reload
