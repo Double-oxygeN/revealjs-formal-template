@@ -21,7 +21,7 @@
     "reveal.js": "^4.1.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.26.13",
     "cssnano": "^4.1.10",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
@@ -31,13 +31,13 @@
     "gulp-postcss": "^9.0.0",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.1.0",
-    "highlight.js": "^10.2.1",
+    "highlight.js": "^10.3.2",
     "livescript": "^1.6.0",
     "livescript-loader": "^0.1.6",
-    "postcss": "^8.1.1",
+    "postcss": "^8.1.7",
     "postcss-import": "^12.0.1",
-    "sass": "^1.27.0",
-    "webpack-merge": "^5.2.0",
-    "webpack-stream": "^6.1.0"
+    "sass": "^1.29.0",
+    "webpack-merge": "^5.4.0",
+    "webpack-stream": "^6.1.1"
   }
 }

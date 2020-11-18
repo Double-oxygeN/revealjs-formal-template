@@ -64,7 +64,7 @@ build-pug = (done) ->
     .pipe bs.stream!
 
 build-sass = (done) ->
-  src 'src/override.sass'
+  src 'src/*.sass'
     .pipe plumber!
     .pipe sass do
       indented-syntax: on
