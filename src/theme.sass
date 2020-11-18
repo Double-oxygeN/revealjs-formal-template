@@ -1,0 +1,53 @@
+/*
+  Customized theme for reveal.js presentations.
+
+@use 'sass:map'
+
+// Default mixins and settings
+@use 'reveal.js/css/theme/template/mixins'
+@use 'reveal.js/css/theme/template/settings' as default
+@use 'fonts'
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700)
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic)
+
+// Override theme settings
+$backgroundColor: #f6f6f6
+
+$mainFont: 'Lato', sans-serif
+$mainFontSize: default.$mainFontSize
+$mainColor: hsl(220, 5%, 10%)
+
+$blockMargin: default.$blockMargin
+
+$headingMargin: default.$headingMargin
+$headingFont: 'News Cycle', Impact, sans-serif
+$headingColor: hsl(220, 15%, 20%)
+$headingLineHeight: default.$headingLineHeight
+$headingLetterSpacing: default.$headingLetterSpacing
+$headingTextTransform: none
+$headingTextShadow: none
+$headingFontWeight: default.$headingFontWeight
+$heading1TextShadow: default.$heading1TextShadow
+
+$heading1Size: default.$heading1Size
+$heading2Size: default.$heading2Size
+$heading3Size: default.$heading3Size
+$heading4Size: default.$heading4Size
+
+$codeFont: 'Rounded-L Mgen+ 1mn', monospace
+
+$linkColor: #00008B
+$linkColorHover: lighten( $linkColor, 20% )
+
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99)
+$selectionColor: default.$selectionColor
+
+=bodyBackground
+  background: $backgroundColor
+
+// Change text colors against dark slide backgrounds
++mixins.dark-bg-text-color(#fff)
+
+@import 'reveal.js/css/theme/template/theme'
