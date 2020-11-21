@@ -1,0 +1,19 @@
+@use 'listSpacing' as ls
+
+=orderedList
+  &_orderedList
+    & > *:last-child
+      margin-bottom: 0
+
+    & > li
+      margin-bottom: ls.$list-item-margin
+
+    & ul, & ol
+      font-size: 90%
+      margin-top: ls.$list-item-margin
+
+      & > *:last-child
+        margin-bottom: 0
+
+      & > li
+        margin-bottom: ls.$list-item-margin

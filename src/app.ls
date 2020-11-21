@@ -6,8 +6,8 @@ require! {
 
 window.addEventListener \load !->
   deck = new Reveal do
-    width: 1_440px
-    height: 1_080px
+    width: 1_216px
+    height: 912px
     plugins:
       * highlight
       * math
