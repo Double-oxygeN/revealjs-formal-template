@@ -34,6 +34,7 @@
     "highlight.js": "^10.3.2",
     "livescript": "^1.6.0",
     "livescript-loader": "^0.1.6",
+    "open-color": "^1.7.0",
     "postcss": "^8.1.7",
     "postcss-import": "^12.0.1",
     "sass": "^1.29.0",
