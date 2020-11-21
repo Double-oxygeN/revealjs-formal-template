@@ -1,0 +1,14 @@
+=titleAndContent
+  &_titleAndContent
+    display: grid
+    grid-template:
+      columns: 50px 1fr 50px
+      rows: 3.5em 1fr
+      areas: "title title title" ". content ."
+    row-gap: 24px
+
+    &> &_title
+      grid-area: title
+
+    &> &_content
+      grid-area: content
