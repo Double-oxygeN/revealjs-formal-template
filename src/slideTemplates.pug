@@ -1,0 +1,8 @@
+mixin titleAndContentSlide(title)
+  section
+    .ly_titleAndContent.r-stretch
+      .ly_titleAndContent_title.el_slideTitle_wrapper
+        h3.el_slideTitle&attributes(attributes)= title
+
+      .ly_titleAndContent_content
+        block
