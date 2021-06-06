@@ -3,9 +3,9 @@ require! {
   del
   'webpack-stream': webpack
   'gulp-image': image
-  'gulp-pug': pug
+  'gulp-pug-3': pug
   'gulp-htmlmin': htmlmin
-  'gulp-sass': sass
+  '@mr-hope/gulp-sass': { sass }
   'gulp-postcss': postcss
   'browser-sync'
   'gulp-plumber': plumber
@@ -13,9 +13,6 @@ require! {
   './webpack.production.ls': webpack-production-config
 }
 bs = browser-sync.create!
-
-require! sass: dart-sass
-sass.compiler = dart-sass
 
 image-extensions = <[ png jpg jpeg gif svg ]>
 
