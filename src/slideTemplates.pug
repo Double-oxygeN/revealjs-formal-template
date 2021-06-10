@@ -5,3 +5,11 @@ mixin standardSlide(title)
         h3.el_slideTitle&attributes(attributes)= title
 
       block
+
+mixin stackContent
+  .ly_sandwichSlide_content.ly_stackContent
+    block
+
+mixin trainContent
+  .ly_sandwichSlide_content.ly_trainContent
+    block
