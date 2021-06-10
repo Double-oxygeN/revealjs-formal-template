@@ -13,3 +13,12 @@ mixin stackContent
 mixin trainContent
   .ly_sandwichSlide_content.ly_trainContent
     block
+
+mixin slideFooter
+  footer.ly_sandwichSlide_footer.bl_slideFooter
+    block
+
+mixin codeBlock(language='plaintext')
+  pre
+    code(class=`language-${language}`)
+      block
