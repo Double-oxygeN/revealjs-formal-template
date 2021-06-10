@@ -1,9 +1,7 @@
 =cite
   &_cite
-    font-size: 75%
-
-    &::before
-      content: '['
+    display: inline
 
     &::after
-      content: ']'
+      font-size: 75%
+      content: '[' attr(author) ', ' attr(year) ']'
