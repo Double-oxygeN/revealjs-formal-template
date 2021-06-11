@@ -1,0 +1,9 @@
+=freeContent
+  &_freeContent
+    display: block
+    position: relative
+
+    & > :not(:first-child)
+      position: absolute
+      top: var(--pos-y, 0)
+      left: var(--pos-x, 0)
