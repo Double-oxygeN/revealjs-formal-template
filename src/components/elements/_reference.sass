@@ -1,0 +1,28 @@
+=reference
+  &_reference
+
+    &::before
+      content: '[' attr(author) ', ' attr(year) ']'
+      margin-right: .7em
+
+    & > &_author
+      display: inline
+      font-style: normal
+      font-weight: 400
+
+      &::after
+        content: ': '
+
+    & > &_title
+      display: inline
+      font-style: normal
+      font-weight: 700
+
+      &::after
+        content: ', '
+        font-weight: 400
+
+    & > &_bookTitle
+      display: inline
+      font-style: oblique
+      font-weight: 400

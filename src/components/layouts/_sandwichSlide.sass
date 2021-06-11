@@ -1,0 +1,25 @@
+@use 'open-color/open-color' as oc
+
+=sandwichSlide
+  &_sandwichSlide
+    display: grid
+    grid-template:
+      columns: 50px 1fr 50px
+      rows: 2.5em 1fr auto
+      areas: "title title title" ". content ." "footer footer footer"
+    row-gap: 24px
+
+    &> &_title
+      grid-area: title
+
+      &:not(:empty)
+        border-bottom: 2px solid oc.$oc-gray-4
+
+    &> &_content
+      grid-area: content
+
+    &> &_footer
+      grid-area: footer
+
+      &:not(:empty)
+        border-top: 2px solid oc.$oc-gray-4
