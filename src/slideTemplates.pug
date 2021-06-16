@@ -26,3 +26,14 @@ mixin codeBlock(language='plaintext')
   pre
     code(class=`language-${language}`)&attributes(attributes)
       block
+
+mixin oval(x, y, w, h, color)
+  -
+    const ovalStyle = {
+      '--pos-x': x,
+      '--pos-y': y,
+      '--oval-w': w,
+      '--oval-h': h,
+      '--oval-color': color
+    }
+  .el_oval(style=ovalStyle)
