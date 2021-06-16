@@ -8,6 +8,12 @@
 1. Run ``npm run develop``.
 1. Edit ``src/slides.pug``.
 
+### GitHub CLI
+
+``
+gh repo create [<name>] -p Double-oxygeN/revealjs-formal-template
+``
+
 ## References
 
 - [Reveal.js official](https://revealjs.com/)
