@@ -18,12 +18,12 @@
   "author": "Double-oxygeN <mail@double-oxygen.net> (https://github.com/Double-oxygeN)",
   "license": "Apache-2.0",
   "dependencies": {
-    "reveal.js": "^4.1.1"
+    "reveal.js": "4.1.0"
   },
   "devDependencies": {
     "@mr-hope/gulp-sass": "^2.0.0",
     "browser-sync": "^2.26.14",
-    "cssnano": "^5.0.5",
+    "cssnano": "^5.0.6",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-htmlmin": "^5.0.1",
