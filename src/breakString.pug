@@ -1,0 +1,34 @@
+-
+  const cutStrByLen = (str, len) => {
+    return { cutStr: str.substring(0, len), rest: str.substring(len) }
+  }
+
+  const cutGroupByLen = (strArr, len) => {
+    let result = { group: [], rest: strArr.concat() }
+    let groupStrLen = 0
+    while ((result.rest.length > 0) && (groupStrLen + result.rest[0].length <= len)) {
+      groupStrLen += result.rest[0].length
+      result.group.push(result.rest.shift())
+    }
+    return result
+  }
+
+  const strGroupByLen = (strArr, len) => {
+    let result = [], group = [], rest = strArr.concat()
+    while (rest.length > 0) {
+      const obj = cutGroupByLen(rest, len)
+      group = obj.group
+      rest = obj.rest
+      if (group.length === 0) {
+        const obj1 = cutStrByLen(rest[0], len)
+        group[0] = obj1.cutStr
+        rest[0] = obj1.rest
+      }
+      result.push(group)
+    }
+    return result
+  }
+
+  const insertBreakLineTags = (str, maxLen, separator = '|') => {
+    return strGroupByLen(str.split(separator), maxLen).map(group => group.join('')).join('<br>')
+  }
