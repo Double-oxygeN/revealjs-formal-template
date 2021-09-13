@@ -2,6 +2,11 @@
   &_trainContent
     display: flex
     flex-flow: row nowrap
-    align-items: start
-    justify-content: start
+    justify-content: flex-start
     gap: 24px
+
+    &#{&}__top
+      align-items: flex-start
+
+    &#{&}__middle
+      align-items: center
