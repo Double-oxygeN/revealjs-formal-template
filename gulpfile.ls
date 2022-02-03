@@ -66,7 +66,7 @@ build-sass = (done) ->
     .pipe sass do
       indented-syntax: on
       output-style: \compressed
-      include-paths:
+      load-paths:
         * 'node_modules'
         ...
     .pipe postcss!
